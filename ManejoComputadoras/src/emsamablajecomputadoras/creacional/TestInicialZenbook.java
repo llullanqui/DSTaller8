@@ -1,14 +1,11 @@
 package emsamablajecomputadoras.creacional;
 
-public class TestInicialROGE extends TestRoge{
-
-	public TestInicialROGE() {}	
+public class TestInicialZenbook extends TestZenbook{
 	
-	public TestInicialROGE(Computador computador) {
+	public TestInicialZenbook(Computador computador) {
 		this.computador = computador;
-		sucesor = new TestMedioROGE(computador);
+		sucesor = new TestMedioZenbook(computador);
 	}
-	
 	@Override
 	protected void handle() {
 		if(!computador.getMarca().equals("Asus")) {
@@ -23,7 +20,7 @@ public class TestInicialROGE extends TestRoge{
 			error();
 			return;
 		}
-		if(!computador.getOs().getVersion().equals("PRO")) {
+		if(!computador.getOs().getVersion().equals("Home")) {
 			error();
 			return;
 		}

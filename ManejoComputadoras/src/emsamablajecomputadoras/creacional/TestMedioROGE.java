@@ -2,15 +2,24 @@ package emsamablajecomputadoras.creacional;
 
 public class TestMedioROGE extends TestRoge{
 
+	public TestMedioROGE() {}
+	
 	public TestMedioROGE(Computador computador) {
-		super(computador);
+		this.computador = computador;
 		sucesor = new TestCompletoROGE(computador);
 	}
 	
 	@Override
 	protected void handle() {
-		// TODO Auto-generated method stub
-		
+		if(computador.getModelo()!="ROGE") {
+			error();
+			return;
+		}
+		if(computador.getAlmacenamiento()!=1000) {
+			error();
+			return;
+		}
+		sucesor.handle();
 	}
 
 }
